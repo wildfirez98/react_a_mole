@@ -1,3 +1,25 @@
+## Game Planning ##
+
+Components and Variables Breakdown
+
+App: 
+-   Stores the 'score' state variable
+-   A function to generate 9 MoleContainers
+
+
+MoleContainer - Component that decides which child component is rendered. Store boolean state variable called 'displayMole'  here.
+
+-   Mole: this will represent a displayed mole. Will contain a timer determining the lifespan of a mole. This component will render when displayMole == true
+    * A useEffect hook that will start the timer and cleanup afterwards
+
+-   EmptySlot: this will represent an empty molehill or invalid location to click. Like its sister component 'Mole' will have an internal timer to cycle the display. This component will render when displayMole == false
+    * A useEffect hook that will start the timer and cleanup afterwards
+
+- A handleClick function that will increment the score by 1 and immediately set the clicked-on mole to no longer display.
+
+- A ternary expression that will determine which child to render
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
